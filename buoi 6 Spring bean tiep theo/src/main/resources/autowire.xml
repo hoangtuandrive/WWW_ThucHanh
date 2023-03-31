@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="faculty" class="iuh.edu.vn.xmlbased.autowire.Faculty">
+        <property name="f_name" value="KHoa CNTT"/>
+    </bean>
+
+<!--    <bean id="faculty2" class="iuh.edu.vn.xmlbased.autowire.Faculty">-->
+<!--        <property name="f_name" value="KHoa KT"/>-->
+<!--    </bean>-->
+
+    <bean id="dept1" class="iuh.edu.vn.xmlbased.autowire.Department" autowire="byName">
+        <property name="dept_name" value="SE"/>
+    </bean>
+
+    <bean id="dept2" class="iuh.edu.vn.xmlbased.autowire.Department" autowire="byType">
+        <property name="dept_name" value="SE"/>
+    </bean>
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="c1" class="iuh.edu.vn.xmlbased.xml.Course">
+        <property name="courseName" value="OOP fundamental"/>
+    </bean>
+
+    <bean id="st1" class="iuh.edu.vn.xmlbased.xml.Student" scope="prototype">
+        <property name="id" value="1001"/>
+        <property name="name" value="Than Thi Det"/>
+        <property name="course" ref="c1"/>
+    </bean>
+
+    <bean id="st2" class="iuh.edu.vn.xmlbased.xml.Student">
+        <constructor-arg name="id" value="1002"/>
+        <constructor-arg name="name" value="Nguyen Van Coi"/>
+        <constructor-arg name="course" ref="c1"/>
+    </bean>
+</beans>

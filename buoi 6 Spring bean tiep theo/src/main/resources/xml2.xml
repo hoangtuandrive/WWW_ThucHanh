@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <bean id="x" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="location" value="xml2_bosung.properties"/>
+   </bean>
+
+
+    <bean id="add1" class="iuh.edu.vn.xmlbased.xml2.Address">
+        <property name="number" value="15H2"/>
+        <property name="street" value="Nguyen Van Bao"/>
+        <property name="ward" value="F4"/>
+        <property name="district" value="Go Vap"/>
+        <property name="city" value="Saigon"/>
+    </bean>
+
+    <bean id="add2" class="iuh.edu.vn.xmlbased.xml2.Address">
+        <property name="number" value="9"/>
+        <property name="street" value="Nguyen Thi Minh Khai"/>
+        <property name="ward" value="F2"/>
+        <property name="district" value="Dist 3"/>
+        <property name="city" value="HCM"/>
+    </bean>
+
+    <bean id="p1" class="iuh.edu.vn.xmlbased.xml2.Person" >
+        <property name="id" value="235983757938"/>
+        <property name="fullname" value="${ho.ten}"/>
+        <property name="emails">
+            <list>
+                <value>det@gmail.com</value>
+                <value>det@hotmail.com</value>
+            </list>
+        </property>
+        <property name="addresses">
+            <list>
+                <ref bean="add1"/>
+                <ref bean="add2"/>
+            </list>
+        </property>
+
+    </bean>
+
+</beans>
