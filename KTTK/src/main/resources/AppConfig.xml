@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="circle" class="vn.iuh.fit.javabased.Circle">
+        <property name="banKinh" value="5"></property>
+    </bean>
+
+    <bean id="triangle" class="vn.iuh.fit.javabased.Triangle">
+        <property name="a" value="3"></property>
+        <property name="b" value="4"></property>
+        <property name="c" value="5"></property>
+    </bean>
+
+    <bean id="rectangle" class="vn.iuh.fit.javabased.Rectangle">
+        <property name="chieuDai" value="3"></property>
+        <property name="chieuRong" value="4"></property>
+    </bean>
+</beans>
