@@ -7,9 +7,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tblManufactory")
-@NamedQueries({
-        @NamedQuery(name="Manufacturer.findAll",query = "from Manufacturer")
-})
 public class Manufacturer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -13,19 +13,23 @@ import java.util.List;
 
 @WebServlet(name = "ProductController", value = "/ProductController")
 public class ProductController extends HttpServlet {
+    private ProductService productService;
+    private ManufacturerService manufacturerService;
+
+    public void init() {
+        productService = new ProductService();
+        manufacturerService = new ManufacturerService();
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        ProductService productService = new ProductService();
-        ManufacturerService manufacturerService = new ManufacturerService();
         HttpSession session = request.getSession(true);
+        String action = request.getParameter("action");
+
         switch (action){
             case "management_product_view":
                 List<Product> ls = productService.getAll();
                 session.setAttribute("products",ls);
-
-
-
                 response.sendRedirect("management-product-view.jsp");
                 break;
             case "add_product_view":

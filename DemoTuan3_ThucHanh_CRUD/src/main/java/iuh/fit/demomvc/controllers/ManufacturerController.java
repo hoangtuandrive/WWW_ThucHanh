@@ -10,11 +10,14 @@ import java.util.List;
 
 @WebServlet(name = "ManufacturerController", value = "/ManufacturerController")
 public class ManufacturerController extends HttpServlet {
+    private ManufacturerService manufacturerService;
+    public void init() {manufacturerService = new ManufacturerService(); }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        ManufacturerService manufacturerService = new ManufacturerService();
         HttpSession session = request.getSession(true);
+        String action = request.getParameter("action");
+
         switch (action){
             case "management_factory_view":
                 List<Manufacturer> ls = manufacturerService.getAll();
