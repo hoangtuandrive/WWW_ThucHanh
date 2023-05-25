@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<div class="container">
+    <h2>PRODUCT LISTING</h2>
+    <hr/>
+    <a class="btn btn-primary" th:href="@{/products/showAddForm}">Add new product</a>
+    <br/><br/>
+    <div>
+        <table class="table table-bordered table-striped" border="1">
+            <thead>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Created Date</th>
+            <th>Category</th>
+            <th>Actions</th>
+
+            </thead>
+            <tbody>
+            <tr th:each="product:${products}">
+                <td th:text="${product.productId}"/>
+                <td th:text="${product.productName}"/>
+                <td th:text="${product.procedureDate}"/>
+                <td th:text="${product.category.categoryName}"/>
+                <td>
+                    <a class="btn btn-info" th:href="@{/products/delete(id=${product.productId})}">Delete</a>
+                    <a class="btn btn-danger ml-2"
+                       th:href="@{/products/showUpdateForm(id=${product.productId})}">Update</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

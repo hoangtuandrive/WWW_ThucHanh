@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Category List</title>
+</head>
+<body>
+<div class="container">
+  <h2>CATEGORY LISTING</h2>
+  <hr/>
+  <a class="btn btn-primary" th:href="@{/categories/showAddForm}">Add new category</a>
+  <br/><br/>
+  <div>
+    <table class="table table-bordered table-striped" border="1">
+      <thead>
+      <th>Category ID</th>
+      <th>Category Name</th>
+      <th>Actions</th>
+
+      </thead>
+      <tbody>
+      <tr th:each="category:${categories}">
+        <td th:text="${category.categoryId}"/>
+        <td th:text="${category.categoryName}"/>
+        <td>
+          <a class="btn btn-info" th:href="@{/categories/delete(id=${category.categoryId})}">Delete</a>
+          <a class="btn btn-danger ml-2"
+             th:href="@{/categories/showUpdateForm(id=${category.categoryId})}">Update</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

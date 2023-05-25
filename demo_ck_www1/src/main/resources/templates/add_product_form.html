@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+<div class="container">
+    <h3>Product Form</h3>
+    <form method="post" role="form" th:action="@{/products/saveProduct}" th:object="${product}">
+        <div>
+            <div><label>Product name:</label>
+                <input class="form-control col-4 mb-4" placeholder="Product name" th:field="${product.productName}"/>
+            </div>
+            <div>
+                <label>Product create Date</label>
+                <input class="form-control col-4 mb-4" placeholder="Created date" th:field="${product.procedureDate}"
+                       type="date"/>
+            </div>
+            <div>
+                <label>Category</label>
+                <select class="form-control" id="categoryId" name="categoryId" th:field="${product.category}">
+                    <option th:each="category : ${categories}" th:value="${category.categoryId}" th:text="${category.categoryName}"></option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Submit"/> <input type="reset" value="Clear"/>
+            </div>
+            <input th:field="${product.productId}" type="hidden"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
