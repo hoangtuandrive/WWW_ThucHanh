@@ -13,5 +13,4 @@ public interface ProductServices {
     Optional<Product> findById(long id);
 
     void delete(Product product);
-    boolean delete(long id);
 }

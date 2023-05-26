@@ -11,5 +11,4 @@ public interface CategoryServices {
     Optional<Category> findById(long id);
 
     void delete(Category category);
-    boolean delete(long id);
 }

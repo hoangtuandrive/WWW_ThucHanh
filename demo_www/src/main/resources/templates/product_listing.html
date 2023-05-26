@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Category</th>
+        </thead>
+        <tbody>
+            <tr th:each="product:${products}">
+                <td th:text="${product.productId}"/>
+                <td th:text="${product.productName}"/>
+                <td th:text="${product.date}"/>
+                <td th:text="${product.category.categoryName}"/>
+            </tr>
+        </tbody>
+    </table>
+  <a th:href="@{/products/addFormProduct}">Add product</a>
+</body>
+</html>
