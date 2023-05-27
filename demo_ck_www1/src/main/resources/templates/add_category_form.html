@@ -5,14 +5,13 @@
     <title>Category</title>
 </head>
 <body>
-<div class="container">
+<div>
     <h3>Category Form</h3>
     <form method="post" role="form" th:action="@{/categories/saveCategory}" th:object="${category}">
         <div>
             <div><label>Category name:</label>
-                <input class="form-control col-4 mb-4" placeholder="Category name" th:field="${category.categoryName}"/>
+                <input placeholder="Category name" th:field="${category.categoryName}"/>
             </div>
-
             <div>
                 <input type="submit" value="Submit"/> <input type="reset" value="Clear"/>
             </div>

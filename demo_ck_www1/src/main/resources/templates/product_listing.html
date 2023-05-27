@@ -5,13 +5,13 @@
     <title>Product List</title>
 </head>
 <body>
-<div class="container">
+<div>
     <h2>PRODUCT LISTING</h2>
     <hr/>
-    <a class="btn btn-primary" th:href="@{/products/showAddForm}">Add new product</a>
+    <a th:href="@{/products/showAddForm}">Add new product</a>
     <br/><br/>
     <div>
-        <table class="table table-bordered table-striped" border="1">
+        <table border="1">
             <thead>
             <th>Product ID</th>
             <th>Product Name</th>
@@ -27,9 +27,8 @@
                 <td th:text="${product.procedureDate}"/>
                 <td th:text="${product.category.categoryName}"/>
                 <td>
-                    <a class="btn btn-info" th:href="@{/products/delete(id=${product.productId})}">Delete</a>
-                    <a class="btn btn-danger ml-2"
-                       th:href="@{/products/showUpdateForm(id=${product.productId})}">Update</a>
+                    <a th:href="@{/products/showUpdateForm(id=${product.productId})}">Update</a>
+                    <a th:href="@{/products/delete(id=${product.productId})}">Delete</a>
                 </td>
             </tr>
             </tbody>
